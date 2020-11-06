@@ -1,0 +1,26 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2>TabAttr List</h2>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>attrNo</th>
+          <th>attrName</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let tabAttr of tabAttrs">
+          <td>{{tabAttr.attrNo}}</td>
+          <td>{{tabAttr.attrName}}</td>
+          <td><button (click)="deleteTabAttr(tabAttr.attrNo)" class="btn btn-danger">Delete</button>
+              <button (click)="updateTabAttr(tabAttr.attrNo)" class="btn btn-info" style="margin-left: 10px">Update</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
