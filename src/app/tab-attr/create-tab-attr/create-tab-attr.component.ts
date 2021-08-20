@@ -1,12 +1,13 @@
-import { TabAttrService } from '../tabAttr.service';
-import { TabAttr } from '../tabAttr';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
+import { TabAttrService } from '../tab-attr.service';
+import { TabAttr } from '../tab-attr';
+
 @Component({
   selector: 'app-create-tabAttr',
-  templateUrl: './create-tabAttr.component.html',
-  styleUrls: ['./create-tabAttr.component.css']
+  templateUrl: './create-tab-attr.component.html',
+  styleUrls: ['./create-tab-attr.component.css']
 })
 export class CreateTabAttrComponent implements OnInit {
 
@@ -40,6 +41,6 @@ export class CreateTabAttrComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/tabAttrs']);
+    this.router.navigate(['tabAttr/list']);
   }
 }

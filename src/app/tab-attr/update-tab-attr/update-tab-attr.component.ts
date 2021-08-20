@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { TabAttr } from '../tabAttr';
 import { ActivatedRoute, Router } from '@angular/router';
-import { TabAttrService } from '../tabAttr.service';
+
+import { TabAttrService } from '../tab-attr.service';
+import { TabAttr } from '../tab-attr';
 
 @Component({
   selector: 'app-update-tabAttr',
-  templateUrl: './update-tabAttr.component.html',
-  styleUrls: ['./update-tabAttr.component.css']
+  templateUrl: './update-tab-attr.component.html',
+  styleUrls: ['./update-tab-attr.component.css']
 })
 export class UpdateTabAttrComponent implements OnInit {
 
@@ -42,6 +43,6 @@ export class UpdateTabAttrComponent implements OnInit {
   }
 
   gotoList() {
-    this.router.navigate(['/tabAttrs']);
+    this.router.navigate(['tabAttr/list']);
   }
 }

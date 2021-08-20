@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { CreateTabAttrComponent } from './create-tabAttr.component';
+import { CreateTabAttrComponent } from './create-tab-attr.component';
 
 describe('CreateTabAttrComponent', () => {
   let component: CreateTabAttrComponent;

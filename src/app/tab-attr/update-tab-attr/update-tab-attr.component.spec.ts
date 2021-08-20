@@ -1,6 +1,5 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
-import { UpdateTabAttrComponent } from './update-tabAttr.component';
+import { UpdateTabAttrComponent } from './update-tab-attr.component';
 
 describe('UpdateTabAttrComponent', () => {
   let component: UpdateTabAttrComponent;

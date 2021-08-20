@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TabAttrListComponent } from './tabAttr-list.component';
+import { TabAttrListComponent } from './tab-attr-list.component';
 
 describe('TabAttrListComponent', () => {
   let component: TabAttrListComponent;
