@@ -1,77 +1,63 @@
 <h3>Create TabGrComp</h3>
-<div [hidden]="submitted" style="width: 400px;">
+<div [hidden]="submitted">
   <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-        <label for="name">Cmp Id</label>
-        <input type="text" class="form-control" id="cmpId" required [(ngModel)]="tabGrComp.cmpId" name="cmpId">
-      </div>
-  
-      <div class="form-group">
-        <label for="name">Cmp Name</label>
-        <input type="text" class="form-control" id="cmpName" required [(ngModel)]="tabGrComp.cmpName" name="cmpName">
-      </div>
-  
-      <div class="form-group">
-        <label for="name">Group Id</label>
-        <input type="text" class="form-control" id="groupId" required [(ngModel)]="tabGrComp.groupId" name="groupId">
-      </div>
-      
-      <div class="form-group">
-        <label for="name">Cmp Addr</label>
-        <input type="text" class="form-control" id="cmpAddr" required [(ngModel)]="tabGrComp.cmpAddr" name="cmpAddr">
-      </div>
-      
-      <div class="form-group">
-        <label for="name">Zip</label>
-        <input type="text" class="form-control" id="zip" required [(ngModel)]="tabGrComp.zip" name="zip">
-      </div>
-  
-      <div class="form-group">
-        <label for="name">Area Code</label>
-        <input type="text" class="form-control" id="areaCode" required [(ngModel)]="tabGrComp.areaCode" name="areaCode">
-      </div>
-  
-      <div class="form-group">
-        <label for="name">Cmp Tel</label>
-        <input type="text" class="form-control" id="cmpTel" required [(ngModel)]="tabGrComp.cmpTel" name="cmpTel">
-      </div>
-      
-      <div class="form-group">
-        <label for="name">Up Dt</label>
-        <input type="text" class="form-control" id="upDt" required [(ngModel)]="tabGrComp.upDt" name="upDt">
-      </div>
-      
-      <div class="form-group">
-        <label for="name">User Id</label>
-        <input type="text" class="form-control" id="userId" required [(ngModel)]="tabGrComp.userId" name="userId">
-      </div>
-      
-      <div class="form-group">
-        <label for="name">Job Class</label>
-        <input type="text" class="form-control" id="jobClass" required [(ngModel)]="tabGrComp.jobClass" name="jobClass">
-      </div>
-  
-      <div class="form-group">
-        <label for="name">Email</label>
-        <input type="text" class="form-control" id="email" required [(ngModel)]="tabGrComp.email" name="email">
-      </div>
-  
-      <div class="form-group">
-        <label for="name">Fax Num</label>
-        <input type="text" class="form-control" id="faxNum" required [(ngModel)]="tabGrComp.faxNum" name="faxNum">
-      </div>
-      
-      <div class="form-group">
-        <label for="name">Cmp Num</label>
-        <input type="text" class="form-control" id="cmpNum" required [(ngModel)]="tabGrComp.cmpNum" name="cmpNum">
-      </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Company Id</mat-label>
+          <input matInput type="number" id="cmpId" required [(ngModel)]="tabGrComp.cmpId" name="cmpId">
+          <mat-error>Required field</mat-error>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Company Name</mat-label>
+          <input matInput type="text" id="cmpName" [(ngModel)]="tabGrComp.cmpName" name="cmpName">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Group Id</mat-label>
+          <input matInput type="text" id="groupId" [(ngModel)]="tabGrComp.groupId" name="groupId">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Company Address</mat-label>
+          <input matInput type="text" id="cmpAddr" [(ngModel)]="tabGrComp.cmpAddr" name="cmpAddr">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Zip</mat-label>
+          <input matInput type="number" id="zip" [(ngModel)]="tabGrComp.zip" name="zip">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Area Code</mat-label>
+          <input matInput type="text" id="areaCode" [(ngModel)]="tabGrComp.areaCode" name="areaCode">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Company Tel</mat-label>
+          <input matInput type="tel" id="cmpTel" [(ngModel)]="tabGrComp.cmpTel" name="cmpTel">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Update Date</mat-label>
+          <input matInput type="text" id="upDt" [(ngModel)]="tabGrComp.upDt" name="upDt">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>User Id</mat-label>
+          <input matInput type="text" id="userId" [(ngModel)]="tabGrComp.userId" name="userId">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Job Class</mat-label>
+          <input matInput type="text" id="jobClass" [(ngModel)]="tabGrComp.jobClass" name="jobClass">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput type="email" id="email" [(ngModel)]="tabGrComp.email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Fax Num</mat-label>
+          <input matInput type="text" id="faxNum" [(ngModel)]="tabGrComp.faxNum" name="faxNum">
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Company Num</mat-label>
+          <input matInput type="text" id="cmpNum" [(ngModel)]="tabGrComp.cmpNum" name="cmpNum">
+        </mat-form-field>
+      </div> 
+      <button mat-raised-button color="primary" type="submit" class="btn btn-success">Submit</button>
   </form>
-  <button (click)="gotoList()" class="btn btn-secondary" style="margin-top: 10px">Return to TabGrComp List</button>
+  <button mat-raised-button color="basic" (click)="gotoList()" style="margin-top: 10px;margin-bottom: 10px">Return to TabAttr List</button>
 </div>
 
-<div [hidden]="!submitted">
-  <h4>You submitted successfully!</h4>
-  <!-- <button class="btn btn-success" (click)="newTabGrComp()">Add</button> -->
-</div>

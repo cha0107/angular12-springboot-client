@@ -7,6 +7,18 @@ import { CreateTabAttrComponent } from './create-tab-attr/create-tab-attr.compon
 import { TabAttrListComponent } from './tab-attr-list/tab-attr-list.component';
 import { UpdateTabAttrComponent } from './update-tab-attr/update-tab-attr.component';
 
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule} from '@angular/material/input';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +29,26 @@ import { UpdateTabAttrComponent } from './update-tab-attr/update-tab-attr.compon
   imports: [
     CommonModule,
     TabAttrRoutingModule,
-    FormsModule
-  ]
+    FormsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule,
+    SharedModule
+  ],
+  exports: [
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatFormFieldModule,
+    MatInputModule
+  ],
 })
 export class TabAttrModule { }

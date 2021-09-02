@@ -1,17 +1,17 @@
 <h3>Update TabAttr</h3>
-<div style="width: 400px;">
+<div>
   <form (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="name">AttrNo</label>
-          <td>{{tabAttr.attrNo}}</td>
-    </div>
-    
-    <div class="form-group">
-      <label for="name">AttrName</label>
-      <input type="text" class="form-control" id="attrName" required [(ngModel)]="tabAttr.attrName" name="attrName">
-    </div>
-
-    <button type="submit" class="btn btn-success">Submit</button>
+    <div>
+      <mat-form-field appearance="outline">
+        <mat-label>AttrNo</mat-label>
+        <input matInput type="text" [readonly]="true" id="attrNo" value={{tabAttr.attrNo}} name="attrNo">
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+        <mat-label>AttrName</mat-label>
+        <input matInput type="text" id="attrName" required [(ngModel)]="tabAttr.attrName" name="attrName">
+      </mat-form-field>
+    </div> 
+    <button mat-raised-button color="primary" type="submit" class="btn btn-success">Submit</button>
   </form>
-  <button (click)="gotoList()" class="btn btn-secondary" style="margin-top: 10px">Return to TabAttr List</button>
+  <button mat-raised-button color="basic" (click)="gotoList()" style="margin-top: 10px;margin-bottom: 10px">Return to TabAttr List</button>
 </div>

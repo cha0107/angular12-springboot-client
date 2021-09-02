@@ -1,49 +1,38 @@
 <div class="panel panel-primary">
-    <div class="panel-heading">
-      <h2>TabGrComp List</h2>
-      <button (click)="createTabGrComp()" class="btn btn-primary">Add TabGrComp</button>
-    </div>
-    <div class="panel-body">
-      <table class="table table-striped">
-        <thead>
-          <tr>
-            <th>cmpId</th>
-            <th>cmpName</th>
-            <th>groupId</th>
-            <th>cmpAddr</th>
-            <th>zip</th>
-            <th>areaCode</th>
-            <th>cmpTel</th>
-            <th>upDt</th>
-            <th>userId</th>
-            <th>jobClass</th>
-            <th>email</th>
-            <th>faxNum</th>
-            <th>cmpNum</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let tabGrComp of tabGrComps">
-            <td>{{tabGrComp.cmpId}}</td>
-            <td>{{tabGrComp.cmpName}}</td>
-            <td>{{tabGrComp.groupId}}</td>
-            <td>{{tabGrComp.cmpAddr}}</td>
-            <td>{{tabGrComp.zip}}</td>
-            <td>{{tabGrComp.areaCode}}</td>
-            <td>{{tabGrComp.cmpTel}}</td>
-            <td>{{tabGrComp.upDt}}</td>
-            <td>{{tabGrComp.userId}}</td>
-            <td>{{tabGrComp.jobClass}}</td>
-            <td>{{tabGrComp.email}}</td>
-            <td>{{tabGrComp.faxNum}}</td>
-            <td>{{tabGrComp.cmpNum}}</td>
-            <td><button (click)="deleteTabGrComp(tabGrComp.cmpId)" class="btn btn-danger">Delete</button>
-                <button (click)="updateTabGrComp(tabGrComp.cmpId)" class="btn btn-info" style="margin-left: 10px">Update</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+  <div class="panel-heading">
+    <h2>TabGrComp List</h2>
+    <button mat-raised-button color="primary" (click)="createTabGrComp()">Add TabGrComp</button>
+  </div>
+   
+  <mat-table [dataSource]="tabGrCompDataSource" matSort #sortTable="matSort" >
+    <!-- displayed Columns -->
+    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </mat-header-cell>
+      <mat-cell *matCellDef="let tabGrComp"> {{tabGrComp[column]}} </mat-cell>
+    </ng-container>
+
+    <!-- Management Column -->
+    <ng-container matColumnDef="management">
+      <mat-header-cell *matHeaderCellDef>
+        <u>Management</u>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let tabGrComp">
+        <button mat-raised-button color="primary" (click)="updateTabGrComp(tabGrComp.cmpId)" style="margin: 10px">Update</button>
+        <button mat-raised-button color="warn" (click)="deleteTabGrComp(tabGrComp.cmpId)">Delete</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+    <mat-row *matRowDef="let tabGrComp; columns: columnsToDisplay;"></mat-row>
+  </mat-table>
+
+  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator> -->
+  <mat-paginator #paginator 
+                [length]="totalCount" 
+                [pageIndex]="0" 
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 15]">
+  </mat-paginator>
   </div>
   
   

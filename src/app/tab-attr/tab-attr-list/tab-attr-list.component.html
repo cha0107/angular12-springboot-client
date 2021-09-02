@@ -1,27 +1,37 @@
-<div class="panel panel-primary">
+<div class="mat-elevation-z8">
   <div class="panel-heading">
     <h2>TabAttr List</h2>
-    <button (click)="createTabAttr()" class="btn btn-primary">Add TabAttr</button>
+    <button mat-raised-button color="primary" (click)="createTabAttr()">Add TabAttr</button>
   </div>
-  <div class="panel-body">
-    <table class="table table-striped">
-      <thead>
-        <tr>
-          <th>attrNo</th>
-          <th>attrName</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let tabAttr of tabAttrs">
-          <td>{{tabAttr.attrNo}}</td>
-          <td>{{tabAttr.attrName}}</td>
-          <td><button (click)="deleteTabAttr(tabAttr.attrNo)" class="btn btn-danger">Delete</button>
-              <button (click)="updateTabAttr(tabAttr.attrNo)" class="btn btn-info" style="margin-left: 10px">Update</button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
 
+  <mat-table [dataSource]="tabAttrDataSource" matSort #sortTable="matSort">
+    <!-- displayed Columns -->
+    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </mat-header-cell>
+      <mat-cell *matCellDef="let tabAttr"> {{tabAttr[column]}} </mat-cell>
+    </ng-container>
+
+    <!-- Management Column -->
+    <ng-container matColumnDef="management">
+      <mat-header-cell *matHeaderCellDef>
+        <u>Management</u>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let tabAttr">
+        <button mat-raised-button color="primary" (click)="updateTabAttr(tabAttr.attrNo)" style="margin: 10px">Update</button>
+        <button mat-raised-button color="warn" (click)="deleteTabAttr(tabAttr.attrNo)">Delete</button>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
+    <mat-row *matRowDef="let tabAttr; columns: columnsToDisplay;"></mat-row>
+
+  </mat-table>
+
+  <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator> -->
+  <mat-paginator #paginator 
+                [length]="totalCount" 
+                [pageIndex]="0" 
+                [pageSize]="10"
+                [pageSizeOptions]="[5, 10, 15]">
+  </mat-paginator>
+</div>
