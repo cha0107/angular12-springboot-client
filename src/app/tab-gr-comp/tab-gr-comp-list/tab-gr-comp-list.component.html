@@ -8,7 +8,12 @@
     <!-- displayed Columns -->
     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
       <mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </mat-header-cell>
-      <mat-cell *matCellDef="let tabGrComp"> {{tabGrComp[column]}} </mat-cell>
+      <div *ngIf="column == 'upDt' ">
+        <mat-cell *matCellDef="let tabGrComp" > {{ tabGrComp[column] | taiwanDate }} </mat-cell>
+      </div>
+      <div #elseTemplate>
+        <mat-cell *matCellDef="let tabGrComp"> {{tabGrComp[column]}} </mat-cell>
+      </div>
     </ng-container>
 
     <!-- Management Column -->

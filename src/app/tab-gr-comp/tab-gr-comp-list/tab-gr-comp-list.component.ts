@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ViewChild } from '@angular/core'
 
 import { TabGrCompService } from "../tab-gr-comp.service";
-import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-tab-gr-comp-list',

@@ -7,7 +7,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ViewChild } from '@angular/core'
 
 import { TabAttrService } from "../tab-attr.service";
-import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: "app-tabAttr-list",
@@ -16,6 +16,7 @@ import { ConfirmDialogComponent } from '../../shared/confirm-dialog/confirm-dial
 })
 export class TabAttrListComponent implements OnInit {
   totalCount;
+  color = "";
   tabAttrDataSource = new MatTableDataSource<any>();
   displayedColumns: string[] = ['attrNo', 'attrName'];
   columnsToDisplay: string[] = ['attrNo', 'attrName', 'management'];

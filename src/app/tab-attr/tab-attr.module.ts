@@ -9,9 +9,6 @@ import { UpdateTabAttrComponent } from './update-tab-attr/update-tab-attr.compon
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatIconModule } from '@angular/material/icon';
-import { MatListModule } from '@angular/material/list';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
@@ -32,9 +29,6 @@ import { SharedModule } from '../shared/shared.module';
     FormsModule,
     MatToolbarModule,
     MatButtonModule,
-    MatSidenavModule,
-    MatIconModule,
-    MatListModule,
     MatTableModule,
     MatPaginatorModule,
     MatSortModule,
@@ -44,11 +38,7 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   exports: [
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatFormFieldModule,
-    MatInputModule
+
   ],
 })
 export class TabAttrModule { }

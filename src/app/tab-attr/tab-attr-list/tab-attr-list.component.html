@@ -1,6 +1,13 @@
 <div class="mat-elevation-z8">
   <div class="panel-heading">
-    <h2>TabAttr List</h2>
+    <h2 [appHighlight]="color">TabAttr List</h2>
+    <div>
+    <h3>Pick a highlight color
+      <input type="radio" name="colors" (click)="color='lightgreen'">Green
+      <input type="radio" name="colors" (click)="color='yellow'">Yellow
+      <input type="radio" name="colors" (click)="color='cyan'">Cyan
+    </h3>
+    </div>
     <button mat-raised-button color="primary" (click)="createTabAttr()">Add TabAttr</button>
   </div>
 
@@ -8,7 +15,7 @@
     <!-- displayed Columns -->
     <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
       <mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </mat-header-cell>
-      <mat-cell *matCellDef="let tabAttr"> {{tabAttr[column]}} </mat-cell>
+      <mat-cell  *matCellDef="let tabAttr"> {{tabAttr[column]}} </mat-cell>
     </ng-container>
 
     <!-- Management Column -->
