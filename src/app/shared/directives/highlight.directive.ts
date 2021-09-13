@@ -1,4 +1,3 @@
-/* tslint:disable:member-ordering */
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
@@ -13,7 +12,7 @@ export class HighlightDirective {
   @Input('appHighlight') highlightColor = '';
 
   @HostListener('mouseenter') onMouseEnter() {
-    this.highlight(this.highlightColor || this.defaultColor || 'red');
+    this.highlight(this.highlightColor || this.defaultColor || 'white');
   }
 
   @HostListener('mouseleave') onMouseLeave() {
@@ -24,10 +23,3 @@ export class HighlightDirective {
     this.el.nativeElement.style.backgroundColor = color;
   }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at https://angular.io/license
-*/

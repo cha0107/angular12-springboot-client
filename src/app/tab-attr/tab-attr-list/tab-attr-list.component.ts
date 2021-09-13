@@ -17,6 +17,7 @@ import { ConfirmDialogComponent } from '../../shared/components/confirm-dialog/c
 export class TabAttrListComponent implements OnInit {
   totalCount;
   color = "";
+  directiveCondition = false;
   tabAttrDataSource = new MatTableDataSource<any>();
   displayedColumns: string[] = ['attrNo', 'attrName'];
   columnsToDisplay: string[] = ['attrNo', 'attrName', 'management'];

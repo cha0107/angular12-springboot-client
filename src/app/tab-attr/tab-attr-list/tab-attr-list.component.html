@@ -1,21 +1,37 @@
 <div class="mat-elevation-z8">
   <div class="panel-heading">
     <h2 [appHighlight]="color">TabAttr List</h2>
-    <div>
-    <h3>Pick a highlight color
-      <input type="radio" name="colors" (click)="color='lightgreen'">Green
-      <input type="radio" name="colors" (click)="color='yellow'">Yellow
-      <input type="radio" name="colors" (click)="color='cyan'">Cyan
-    </h3>
+    <button
+      mat-raised-button
+      (click)="directiveCondition = !directiveCondition"
+    >
+    測試Directive結構型指令：Toggle condition to [{{directiveCondition ? 'false' : 'true'}}]
+    </button>
+    <div *appUnless="!directiveCondition">
+      <h3>
+        測試Directive屬性型指令：Pick a highlight color
+        &nbsp;
+        <input type="radio" name="colors" (click)="color = 'lightgreen'" />Green
+        <input type="radio" name="colors" (click)="color = 'yellow'" />Yellow
+        <input type="radio" name="colors" (click)="color = 'cyan'" />Cyan
+      </h3>
     </div>
-    <button mat-raised-button color="primary" (click)="createTabAttr()">Add TabAttr</button>
+    <br/>
+    <button mat-raised-button color="primary" (click)="createTabAttr()">
+      Add TabAttr
+    </button>
   </div>
 
   <mat-table [dataSource]="tabAttrDataSource" matSort #sortTable="matSort">
     <!-- displayed Columns -->
-    <ng-container [matColumnDef]="column" *ngFor="let column of displayedColumns">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> {{column}} </mat-header-cell>
-      <mat-cell  *matCellDef="let tabAttr"> {{tabAttr[column]}} </mat-cell>
+    <ng-container
+      [matColumnDef]="column"
+      *ngFor="let column of displayedColumns"
+    >
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        {{ column }}
+      </mat-header-cell>
+      <mat-cell *matCellDef="let tabAttr"> {{ tabAttr[column] }} </mat-cell>
     </ng-container>
 
     <!-- Management Column -->
@@ -24,21 +40,35 @@
         <u>Management</u>
       </mat-header-cell>
       <mat-cell *matCellDef="let tabAttr">
-        <button mat-raised-button color="primary" (click)="updateTabAttr(tabAttr.attrNo)" style="margin: 10px">Update</button>
-        <button mat-raised-button color="warn" (click)="deleteTabAttr(tabAttr.attrNo)">Delete</button>
+        <button
+          mat-raised-button
+          color="primary"
+          (click)="updateTabAttr(tabAttr.attrNo)"
+          style="margin: 10px"
+        >
+          Update
+        </button>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="deleteTabAttr(tabAttr.attrNo)"
+        >
+          Delete
+        </button>
       </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="columnsToDisplay"></mat-header-row>
-    <mat-row *matRowDef="let tabAttr; columns: columnsToDisplay;"></mat-row>
-
+    <mat-row *matRowDef="let tabAttr; columns: columnsToDisplay"></mat-row>
   </mat-table>
 
   <!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" [pageSize]="5" showFirstLastButtons></mat-paginator> -->
-  <mat-paginator #paginator 
-                [length]="totalCount" 
-                [pageIndex]="0" 
-                [pageSize]="10"
-                [pageSizeOptions]="[5, 10, 15]">
+  <mat-paginator
+    #paginator
+    [length]="totalCount"
+    [pageIndex]="0"
+    [pageSize]="10"
+    [pageSizeOptions]="[5, 10, 15]"
+  >
   </mat-paginator>
 </div>
